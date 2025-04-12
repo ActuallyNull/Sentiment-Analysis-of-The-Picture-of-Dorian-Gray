@@ -17,14 +17,14 @@ plt.yticks(range(corr.shape[0]), corr.columns, fontsize=20)
 
 # Add correlation numbers
 for (i, j), val in np.ndenumerate(corr.values):
-    plt.text(j, i, f'{val:.2f}', ha='center', va='center', fontsize=14, color='black')
+    plt.text(j, i, f'{val:.2f}', ha='center', va='center', fontsize=17, color='black')
 
 # Colorbar
 cb = plt.colorbar()
 cb.ax.tick_params(labelsize=20)
 
 # Title and save
-plt.title('Correlation Matrix for Emotions in The Portrait of Dorian Gray', fontsize=40)
+plt.title('Correlation Matrix for Emotions in The Picture of Dorian Gray', fontsize=40)
 plt.tight_layout()
 plt.savefig("plots/correlation_matrix.png", format='png', bbox_inches='tight')
 plt.show()
