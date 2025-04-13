@@ -49,23 +49,23 @@ kde1.fig.subplots_adjust(top=0.95)
 kde1.fig.savefig(f"{output_dir}/negative_vs_anger_kde.png", bbox_inches='tight')
 plt.close(kde1.fig)
 
-# Regression Plot 2: Negative vs Fear
-r, _ = stats.pearsonr(df_pos['negative_n'], df_pos['fear_n'])
-a2 = sns.jointplot(x="negative_n", y="fear_n", data=df_pos, kind='reg', color='firebrick')
+# Regression Plot 2: Negative vs trust
+r, _ = stats.pearsonr(df_pos['negative_n'], df_pos['trust_n'])
+a2 = sns.jointplot(x="negative_n", y="trust_n", data=df_pos, kind='reg', color='firebrick')
 a2.ax_joint.annotate(f'$\\rho = {r:.3f}$',
                      xy=(0.1, 0.9), xycoords='axes fraction',
                      ha='left', va='center',
                      bbox={'boxstyle': 'round', 'fc': 'powderblue', 'ec': 'navy'})
-a2.fig.suptitle("Negative vs Fear (Regression)", fontsize=16)
+a2.fig.suptitle("Negative vs Trust (Regression)", fontsize=16)
 a2.fig.tight_layout()
 a2.fig.subplots_adjust(top=0.95)
-a2.fig.savefig(f"{output_dir}/negative_vs_fear_reg.png", bbox_inches='tight')
+a2.fig.savefig(f"{output_dir}/negative_vs_trust_reg.png", bbox_inches='tight')
 plt.close(a2.fig)
 
 # KDE Plot 2
-kde2 = sns.jointplot(x="negative_n", y="fear_n", data=df_pos, kind='kde', shade=True, cmap='PuRd')
-kde2.fig.suptitle("Negative vs Fear (KDE)", fontsize=16)
+kde2 = sns.jointplot(x="negative_n", y="trust_n", data=df_pos, kind='kde', shade=True, cmap='PuRd')
+kde2.fig.suptitle("Negative vs Trust (KDE)", fontsize=16)
 kde2.fig.tight_layout()
 kde2.fig.subplots_adjust(top=0.95)
-kde2.fig.savefig(f"{output_dir}/negative_vs_fear_kde.png", bbox_inches='tight')
+kde2.fig.savefig(f"{output_dir}/negative_vs_trust_kde.png", bbox_inches='tight')
 plt.close(kde2.fig)

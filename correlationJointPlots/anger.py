@@ -47,21 +47,21 @@ kde1.fig.subplots_adjust(top=0.95)
 kde1.fig.savefig(f"{output_dir}/anger/anger_vs_negative_kde.png", bbox_inches='tight')
 plt.close(kde1.fig)
 
-# Regression Plot 2: Anger vs Disgust
-r, _ = stats.pearsonr(df_pos['anger_n'], df_pos['disgust_n'])
-a2 = sns.jointplot(x="anger_n", y="disgust_n", data=df_pos, kind='reg', color='red')
-a2.fig.suptitle('Anger vs Disgust (Regression)', fontsize=16)
+# Regression Plot 2: Anger vs trust
+r, _ = stats.pearsonr(df_pos['anger_n'], df_pos['trust_n'])
+a2 = sns.jointplot(x="anger_n", y="trust_n", data=df_pos, kind='reg', color='red')
+a2.fig.suptitle('Anger vs Trust (Regression)', fontsize=16)
 a2.fig.subplots_adjust(top=0.95)
 a2.ax_joint.annotate(f'$\\rho = {r:.3f}$',
                      xy=(0.1, 0.9), xycoords='axes fraction',
                      ha='left', va='center',
                      bbox={'boxstyle': 'round', 'fc': 'powderblue', 'ec': 'navy'})
-a2.fig.savefig(f"{output_dir}/anger/anger_vs_disgust_reg.png", bbox_inches='tight')
+a2.fig.savefig(f"{output_dir}/anger/anger_vs_trust_reg.png", bbox_inches='tight')
 plt.close(a2.fig)
 
 # KDE Plot 2
-kde2 = sns.jointplot(x="anger_n", y="disgust_n", data=df_pos, kind='kde', shade=True, cmap="Reds")
-kde2.fig.suptitle('Anger vs Disgust (KDE)', fontsize=16)
+kde2 = sns.jointplot(x="anger_n", y="trust", data=df_pos, kind='kde', shade=True, cmap="Reds")
+kde2.fig.suptitle('Anger vs Trust (KDE)', fontsize=16)
 kde2.fig.subplots_adjust(top=0.95)
-kde2.fig.savefig(f"{output_dir}/anger/anger_vs_disgust_kde.png", bbox_inches='tight')
+kde2.fig.savefig(f"{output_dir}/anger/anger_vs_trust_kde.png", bbox_inches='tight')
 plt.close(kde2.fig)
