@@ -21,7 +21,7 @@ def lemmatize_chapter(chap_token):
     return lemmatized_sentence
 
 lemm_chapter = lemmatize_chapter(chap_token)
-#print(lemm_chapter[0:20])
+print(lemm_chapter[0:20])
 
 # denoising
 stop_words = stopwords.words('english') # words/punctionation that are not useful for analysis (e.g. "the", "a", "an", "is", "are", "and", "or", etc.)

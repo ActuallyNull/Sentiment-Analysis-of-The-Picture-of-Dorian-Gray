@@ -1,12 +1,9 @@
-import nltk
 from nltk.corpus import twitter_samples
 from nltk import NaiveBayesClassifier
 import random
-import nltk
 from nltk.corpus import twitter_samples, stopwords
 from nltk.tag import pos_tag
 from nltk.stem.wordnet import WordNetLemmatizer
-from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk import FreqDist, classify, NaiveBayesClassifier
 from tokenizing import chap_token
 import string

@@ -3,7 +3,6 @@ from classifierModel import classifier
 from chapterCategorization import split_book_into_chapters, get_book_chapters
 from tokenizing import tokenize_chapter_contents
 from lemmatizing_denoising import lemmatize_chapter, remove_noise
-import os
 import pandas as pd
 from nltk.corpus import stopwords
 import nltk
@@ -56,7 +55,7 @@ def book_sentiment_wrapper(book_dir, book_id,stop_words):
         #print(tokens_for_model)
         chap_sentiment   = classifier.classify(dict([token, True] for token in tokens_for_model))
         
-        #print('Chapter ', chapter_num, ' Sentiment is ', chap_sentiment)
+        print('Chapter ', chapter_num, ' Sentiment is ', chap_sentiment)
         book_sentiment.append(chap_sentiment)
         
         chapter_num += 1
