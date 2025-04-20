@@ -207,7 +207,7 @@ plt.close()
 # Chapter 16: Frantic
 plot_chapter_emotion_progression(
     chapter_num=16,
-    emotions=["Frantic", "Paranoia"],
+    emotions=["Frantic", "Terror"],
     scores=[4, 2]
 )
 plt.savefig('actualFeverChart/chapter16_emotions_updated.png')
